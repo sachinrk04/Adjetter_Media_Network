@@ -1,0 +1,26 @@
+.AddUser {
+    border: 1px solid gray;
+    background: white;
+}
+
+.AddUser > input {
+    width: 450px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+}
+
+.AddUser > button {
+    width: 70px;
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    background: gray;
+    color: white;
+}
+
+.AddUser > button:hover {
+    color: white;
+    background: blue;
+}

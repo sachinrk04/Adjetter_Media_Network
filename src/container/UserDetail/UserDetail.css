@@ -1,0 +1,31 @@
+.UserDetail {
+    padding: 20px 50px;
+}
+
+.UserDetail > div {
+    padding: 10px 20px;
+    border: 1px solid gray;
+    background: gainsboro;
+}
+
+.UserDetail > div > h3 > span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.UserDetail > div > h4 > span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.repo-link > a {
+    color: darkblue;
+    border: 1px solid rebeccapurple;
+    padding: 5px 20px;
+    background: white;
+}
+
+.repo-link > a:hover {
+    background: blue;
+    color: white;
+}

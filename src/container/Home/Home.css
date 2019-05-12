@@ -1,0 +1,51 @@
+
+.search-grid-wrapper {
+    width: 100%;
+    margin: 15px auto;
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 20px;
+    margin: 0px 30px;
+}
+.search-grid-list, .search-grid-recent {
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    background: gainsboro;
+}
+
+.search-grid-recent > ol  {
+    padding-left: 15px;
+}
+
+.search-grid-recent > ol > li > a {
+    color: black;
+}
+
+.search-grid-recent > ol > li > a:hover {
+    color: blue;
+}
+
+.add-new-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-new-user > button {
+    width: 120px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    color: white;
+    background: gray;
+    outline: none;
+    border: none;
+}
+
+.add-new-user > button:hover {
+    color: white;
+    background: blue;
+}
