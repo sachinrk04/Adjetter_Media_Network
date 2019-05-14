@@ -13,7 +13,7 @@ class List extends Component {
                     <h4>{this.props.userList.login} </h4>
                 </Link>
                 <button onClick={() => this.props.editFrom(this.props.userList.login)} className="Edit-Button">Edit</button>
-                <button className="Edit-Button" onClick={() => this.props.remove(this.props.userList.login)}>Remove</button>
+                <button className="Remove-Button" onClick={() => this.props.remove(this.props.userList.login)}>Remove</button>
             </li>
         );
     }

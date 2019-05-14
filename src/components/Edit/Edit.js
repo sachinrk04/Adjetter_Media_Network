@@ -27,7 +27,6 @@ class Edit extends Component {
         this.props.updateUser(data);
         this.props.editFromClose();
         this.props.history.push(`/${this.state.editUser}`)
-        // `/${this.props.userList.login}/${this.props.userList.id}`
     }
     render() {
         console.log(this.props)
@@ -35,19 +34,20 @@ class Edit extends Component {
             <React.Fragment>
                 <div className="edit-container" onClick={this.props.editFromClose} />
                 <div className="Edit-box">
-                    <form onSubmit={this.editFormSubmit}>
-                        <input type="text" value={ this.state.editUser} onChange={this.handleChanged} />
-                        <button type="submit">Update</button>
-                    </form>
+                    <div>
+                        <h4>Enter new UserName</h4>
+                        <div>
+                            <form onSubmit={this.editFormSubmit}>
+                                <input type="text" value={ this.state.editUser} onChange={this.handleChanged} />
+                                <button type="submit">Update</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </React.Fragment>
         );
     }
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {updateUser: login => dispatch(actions.updateUser(login))}
-// }
 
 const mapDispatchToProps =  ({
     updateUser: login => actions.updateUser(login)

@@ -6,7 +6,6 @@ import './UserRepo.css';
 
 class UserRepo extends Component {
     componentDidMount() {
-        console.log("USER ID: ", this.props)
         const userName = this.props.match.params.username;
         this.props.getUserRepos(userName);
     }

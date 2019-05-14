@@ -13,6 +13,12 @@ class AddUser extends Component {
         this.setState({userName: event.target.value});
     }
 
+    AddFormSubmit = (e) => {
+        e.preventDefault();
+        this.props.Add(this.state.userName)
+        this.props.closeForm();
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -22,7 +28,7 @@ class AddUser extends Component {
                         placeholder="Name" 
                         onChange={this.nameChangedHandler}
                         value={this.state.userName} />
-                    {this.state.userName.length > 0 ? <button onClick={() => this.props.Add(this.state.userName)}>Add</button> : null}
+                    {this.state.userName.length > 0 ? <button onClick={this.AddFormSubmit}>Add</button> : null}
                 </div> 
             </React.Fragment>
         );

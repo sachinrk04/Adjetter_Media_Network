@@ -31,16 +31,10 @@ class Home extends Component {
         this.setState({ isEdit: false, currentUser: "" })
     }
 
-    componentDidUpdate() {
-        console.log("HOME CDU", this.props)
-    }
-
     render() {
-        console.log("Stt:", this.state)
-        console.log("PROPS: ", this.props)
         let addUser = null;
         if(this.state.isAddUser) {
-            addUser = <AddUser />
+            addUser = <AddUser closeForm={this.closeForm} />
         }
 
         let edit = null;
@@ -87,6 +81,5 @@ class Home extends Component {
 const mapStateToProps = state => ({
     usersList: state.github.searchedResults,
     recentSearchedName: state.github.recentSearchedName,
-    addNewUser: state.github.addNewUser,
 });
 export default connect(mapStateToProps)(Home);

@@ -17,7 +17,6 @@ class SearchBox extends Component {
 
     submitForm = (e) => {
         e.preventDefault();
-        console.log("SEARCH::", this.state.searchTerm)
         this.props.searchGitUser(this.state.searchTerm)
         .then( res => console.log("RRRRR:", res))
         .catch(err => console.log(err));

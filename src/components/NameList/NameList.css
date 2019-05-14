@@ -43,6 +43,18 @@
     outline: none;
     background: gray;
     color: antiquewhite;
+    margin-left: 5px;
+}
+
+.Remove-Button {
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: gray;
+    color: antiquewhite;
+    margin-left: 5px;
 }
 
 .NameList > button {
@@ -51,6 +63,11 @@
 }
 
 .Edit-Button:hover {
+    color: aliceblue;
+    background: lightseagreen;
+}
+
+.Remove-Button:hover {
     color: aliceblue;
     background: red;
 }

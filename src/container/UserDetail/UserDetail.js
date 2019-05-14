@@ -10,7 +10,6 @@ import './UserDetail.css';
 
 class UserDetail extends Component {
     componentDidMount() {
-        console.log("USER ID: ", this.props)
         const userName = this.props.match.params.username;
         this.props.getUserDetails(userName);
     }

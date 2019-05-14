@@ -7,7 +7,6 @@ import List from './List/List';
 
 class NameList extends Component {
     render() {
-        console.log("NAMELIST UPDATE", this.props.usersList)
         return (
             <div className="NameList">
                 <ul>
