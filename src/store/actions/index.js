@@ -3,5 +3,6 @@ export {
     getUserDetails, 
     getUserRepos,
     addNewUser,
-    removeUser
+    removeUser,
+    updateUser
 } from "./githubReducer";

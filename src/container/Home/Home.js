@@ -6,31 +6,50 @@ import NameList from '../../components/NameList/NameList';
 
 import './Home.css';
 import AddUser from '../../components/AddUser/AddUser';
+import Edit from '../../components/Edit/Edit';
 
 class Home extends Component {
     state = {
         isAddUser: false,
+        isEdit: false,
+        currentUser: "",
     }
 
-    openForm = () => {
-        this.setState({
-            isAddUser: true,
-        })
+    openAddForm = () => {
+        this.setState({ isAddUser: true })
     }
 
     closeForm = () => {
-        this.setState({
-            isAddUser: false,
-        })
+        this.setState({ isAddUser: false })
+    }
+
+    editFromOpen = (data) => {
+        this.setState({ isEdit: true, currentUser: data })
+    }
+
+    editFromClose = () => {
+        this.setState({ isEdit: false, currentUser: "" })
+    }
+
+    componentDidUpdate() {
+        console.log("HOME CDU", this.props)
     }
 
     render() {
+        console.log("Stt:", this.state)
+        console.log("PROPS: ", this.props)
         let addUser = null;
         if(this.state.isAddUser) {
             addUser = <AddUser />
         }
+
+        let edit = null;
+        if(this.state.isEdit) {
+            edit = <Edit editFromClose={this.editFromClose} currentUser={this.state.currentUser} history={this.props.history}/> 
+        }
         return (
             <React.Fragment>
+                {edit}
                 <div className="search-grid-wrapper">
                     <SearchBox />
                     {
@@ -38,10 +57,9 @@ class Home extends Component {
 
                         <div className="search-grid">
                         <div className="search-grid-list">
-                            {this.props.usersList.length > 0 ? <NameList usersList={this.props.usersList}/> : null }
-                            {this.props.addNewUser.length > 0 ? <NameList usersList={this.props.addNewUser}/> : null }
+                            {this.props.usersList.length > 0 ? <NameList editFrom={this.editFromOpen} usersList={this.props.usersList}/> : null }
                             <div className="add-new-user">
-                                <button onClick={this.openForm} >Add New user</button>
+                                <button onClick={this.openAddForm} >Add New user</button>
                                 {addUser}
                             </div>
                         </div>

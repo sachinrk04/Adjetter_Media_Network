@@ -6,6 +6,7 @@ const initialState = {
     selectedUser: {},
     selectedUserRepos: [],
     addNewUser: [],
+    updateUser: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -31,6 +32,19 @@ const reducer = (state = initialState, action) => {
             selectedUserRepos: [...action.payload],
         };
 
+        case actionTypes.UPDATE_USER:
+        const currentUsers = [...state.searchedResults]
+        currentUsers.forEach(user => {
+            if(user.login === action.update.currentUser) {
+                user.login = action.update.updateUser
+                console.log(user)
+            }
+        })
+        return {
+            ...state,
+            searchedResults: [...currentUsers]
+        }
+
         case actionTypes.ADD_USER:
         const newUser = {
             id: Math.random(),
@@ -39,14 +53,13 @@ const reducer = (state = initialState, action) => {
         console.log("NewUser:" ,newUser);
         return {
             ...state,
-            addNewUser: state.addNewUser.concat(newUser)
+            searchedResults: [...state.searchedResults, newUser]
         }
 
         case actionTypes.REMOVE_USER:
         return {
             ...state,
             searchedResults: state.searchedResults.filter(user => user.login !== action.removeData ),
-            addNewUser: state.addNewUser.filter(user => user.login !== action.removeData )
         }
 
         default: return state

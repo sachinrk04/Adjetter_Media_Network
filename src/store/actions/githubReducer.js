@@ -130,6 +130,14 @@ export const getUserRepos = (userName) => dispatch => {
     })
 
 } 
+
+//______________________________________________________UPDATE_USER__________________________________________________
+export const updateUser = (login) => {
+    return {
+        type: actionTypes.UPDATE_USER,
+        update: login
+    }
+}
   
 
 // _____________________________________________________ADD_NEW_USER_____________________________________________
